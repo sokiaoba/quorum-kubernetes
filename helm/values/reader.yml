@@ -42,13 +42,16 @@ node:
       password: 'password'
   goquorum:
     metrics:
-      serviceMonitorEnabled: true
+      serviceMonitorEnabled: false
     resources:
-      cpuLimit: 1
-      cpuRequest: 0.1
-      memLimit: "2G"
-      memRequest: "1G"
+      cpuLimit: 2
+      cpuRequest: 1.5
+      memLimit: "6G"
+      memRequest: "4G"
     account:
       password: 'password'
+    txpool:
+      globalslots: 20000
+      globalqueue: 20000
   tessera:
     password: 'password'

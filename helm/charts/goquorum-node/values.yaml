@@ -54,7 +54,7 @@ node:
       verbosity: 5
     miner:
       threads: 1
-      blockPeriod: 5
+      blockPeriod: 1
     p2p:
       enabled: true
       addr: "0.0.0.0"
@@ -89,6 +89,9 @@ node:
       url: "http://localhost:9101"
       pubkeysPath: "/tessera"
       pubkeyFile: "/tessera/tm.pub"
+    txpool:
+      globalslots: 20000
+      globalqueue: 20000
 
   tessera:
     resources:
@@ -109,7 +112,7 @@ node:
 image:
   goquorum:
     repository: quorumengineering/quorum
-    tag: 22.7.1
+    tag: 22.7.2
   tessera:
     repository: quorumengineering/tessera
     tag: 22.1.7

@@ -284,6 +284,16 @@ spec:
           {{- if hasKey .Values.node.goquorum.account "unlock" }}
              --unlock {{ .Values.node.goquorum.account.unlock }} --allow-insecure-unlock --password {{ .Values.node.goquorum.account.passwordPath }} \
           {{- end }}
+          {{- if .Values.node.goquorum.txpool }}
+            {{- if .Values.node.goquorum.txpool.globalslots }}
+              {{- if .Values.node.goquorum.txpool.globalslots }}
+            --txpool.globalslots {{ .Values.node.goquorum.txpool.globalslots }} \
+              {{- end }}
+              {{- if .Values.node.goquorum.txpool.globalqueue }}
+            --txpool.globalqueue {{ .Values.node.goquorum.txpool.globalqueue }} \
+              {{- end }}
+            {{- end }}
+          {{- end }}
 
         livenessProbe:
           httpGet:
